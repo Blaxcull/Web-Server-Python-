@@ -35,16 +35,6 @@ def handle_client(client_socket, client_address):
                 response_body = f"User-Agent: {user_agent}"
                 status_code = "200 OK"
 
-            if path == "/readme.txt":
-                try:
-                    with open('readme.txt', "r") as file:
-                        response_body = file.read()
-                    status_code = "200 OK"
-                except FileNotFoundError:
-                    response_body = "404 File Not Found"
-                    status_code = "404 Not Found"
-
-
             else:
                 response_body = "404 Not Found"
                 status_code = "404 Not Found"
@@ -73,7 +63,7 @@ def handle_client(client_socket, client_address):
 
 # Create a server socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_address = ('localhost', 6969)
+server_address = ('localhost', 6968)
 server_socket.bind(server_address)
 
 server_socket.listen(5)  # Allow up to 5 connections in the queue
