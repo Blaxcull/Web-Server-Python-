@@ -63,7 +63,7 @@ def handle_client(client_socket, client_address):
 
 # Create a server socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_address = ('localhost', 6968)
+server_address = ('localhost', 6969  )
 server_socket.bind(server_address)
 
 server_socket.listen(5)  # Allow up to 5 connections in the queue
